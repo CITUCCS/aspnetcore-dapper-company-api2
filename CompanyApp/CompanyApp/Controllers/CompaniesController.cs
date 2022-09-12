@@ -16,11 +16,11 @@ namespace CompanyApp.Controllers
 
         // GET /api/companies/{id}
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCompany(int id)
+        public IActionResult GetCompany(int id)
         {
             try
             {
-                var company = await _companyRepo.GetCompany(id);
+                var company = _companyRepo.GetCompany(id);
                 if (company == null)
                     return NotFound();
 

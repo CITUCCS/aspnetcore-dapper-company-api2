@@ -12,6 +12,6 @@ namespace CompanyApp.Repositories
         /// </summary>
         /// <param name="id">Id of the company</param>
         /// <returns>Company</returns>
-        public Task<Company> GetCompany(int id);
+        public Company GetCompany(int id);
     }
 }
