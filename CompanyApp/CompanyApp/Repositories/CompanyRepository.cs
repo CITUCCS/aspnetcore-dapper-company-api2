@@ -13,13 +13,13 @@ namespace CompanyApp.Repositories
             _context = context;
         }
 
-        public async Company GetCompany(int id)
+        public Company GetCompany(int id)
         {
             var query = "SELECT * FROM Companies WHERE Id = @Id";
 
             using (var connection = _context.CreateConnection())
             {
-                var company = await connection.QuerySingleOrDefault(query, new { id });
+                var company = connection.QuerySingleOrDefault(query, new { id });
                 
                 return company;
             }
